@@ -1,0 +1,9 @@
+<div class="Header d-flex flex-column flex-md-row align-items-center px-md-4 mb-3 shadow-sm">
+	<%= link_to root_url, class: "my-0 mr-md-auto navbar-brand" do %>
+	<%= image_tag("transparent.svg", size: "48x48", alt: "Мій Університет") %>
+	<% end %>
+	<nav class="my-2 my-md-0 mr-md-3">
+		<%= link_to 'Android', android_url, class: "p-2" %>
+		<%= link_to 'iOS', ios_url, class: "p-2" %>
+	</nav>
+</div>

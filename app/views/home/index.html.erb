@@ -1,0 +1,48 @@
+<% meta_tag :description, "#Мій Університет - зручний розклад занять" %>
+<% meta_tag :keywords, "Розклад,Расписание" %>
+<% @title = "Розклад 'Мій Університет'" %>
+
+<%= render "layouts/header" %>
+
+<main class="container" role="main">
+	<div class="mx-auto col-md-8">
+		<div class="card mb-3">
+			<div class="card-header">
+				<div class="media">
+					<source srcset="/transparent.svg" media="(prefers-color-scheme: dark)">
+						<img src="/transparent.svg" height="64" width="64" alt="Логотип" class="align-self-center mr-3">
+						<div class="media-body">
+							<h1 display-3 class="mt-0">Розклад</h1>
+							<h6 class="card-subtitle mb-2 Text-light font-weight-light">Мій Університет</h6>
+						</div>
+					</div>
+				</div>
+				<div class="card-body">
+					<div class="card-text">
+						<ul class="list-group list-group-flush">
+
+							<li class="list-group-item border-0">
+								<%= octicon "organization", height: 24, width: 24, class: "align-middle" %>
+								<span class="align-middle">
+									<a href="#" class="align-middle ml-2">Групи</a>
+								</span>
+							</li>
+
+							<li class="list-group-item border-0">
+								<%= octicon "briefcase", height: 24, width: 24, class: "align-middle" %>
+								<a href="#" class="align-middle ml-2">Викладачі</a>
+							</li>
+
+							<li class="list-group-item border-0">
+								<%= octicon "sign-in", height: 24, width: 24, class: "align-middle" %>
+								<a href="#" class="align-middle ml-2">Аудиторії</a>
+							</li>
+						</ul>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+
+<%= render "layouts/footer" %>

@@ -1,15 +1,32 @@
 <!DOCTYPE html>
+<html lang="ua">
 <html>
-  <head>
-    <title>MyUniversityDemo</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="<%= yield_meta_tag(:description, '') %>" />
+  <meta name="keywords" content="<%= yield_meta_tag(:keywords, '') %>" />
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+  <% if yield(:no_index).present? %>
+  <meta name="robots" content="noindex">
+  <% end %>
 
-  <body>
-    <%= yield %>
-  </body>
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+
+  <title><%= @title %></title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+  <% if yield(:canonical_link).present? %>
+  <link rel="canonical" href="<%= yield(:canonical_link) %>">
+  <% end %>
+</head>
+
+<body>
+  <%= yield %>
+</body>
 </html>

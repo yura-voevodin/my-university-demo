@@ -28,6 +28,17 @@ gem 'jbuilder', '~> 2.7'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 
+# Bootstrap
+gem 'bootstrap', '~> 4.2.1'
+gem 'jquery-rails'
+
+# A scalable set of icons handcrafted with <3 by GitHub
+gem 'octicons'
+gem 'octicons_helper'
+
+# Font-Awesome Sass gem for use in Ruby/Rails projects
+gem 'font-awesome-sass'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
