@@ -1,0 +1,49 @@
+<% meta_tag :description, "" %>
+<% meta_tag :keywords, "" %>
+<% @title = "Мій Університет - Android додаток" %>
+<% no_index %>
+
+<%= render "layouts/header" %>
+<main class="container" role="main">
+
+  <div class="container">
+    <div class="row"><h1>Мій Університет для Android</h1></div>
+  </div>
+
+  <div class="container mt-2 mb-2">
+    <div class="row">
+
+      <div class="col-md-8 order-md-1">
+        <div class="mt-4">
+          <p>
+            <a href="https://play.google.com/store/apps/details?id=ua.com.myuniversity">
+              <%= image_tag("google-play-badge.png", style: "width:186px;height:72px;") %>
+            </a>
+          </p>
+        </div>
+        <p><b>Android</b> додаток для <i>студентів та викладачів</i> з актуальним розкладом пар.</p>
+        <p><b>Основні особливості:</b></p>
+        <p>
+          <ul>
+            <li>Розклад груп, викладачів та аудиторій</li>
+            <li>Перегляд розкладу без доступу до інтернету</li>
+            <li>Вкладка "Обрані"</li>
+          </ul>
+        </p>
+        <p><b>Підтримує такі університети:</b></p>
+        <p>
+          <ul>
+            <li>Сумський державний університет (<a href="https://sumdu.edu.ua/uk/">СумДУ</a>)</li>
+            <li>Національний технічний університет України "Київський політехнічний інститут імені Ігоря Сікорського" (<a href="https://kpi.ua">КПІ</a>)</li>
+          </ul>
+        </p>
+      </div>
+
+      <div class="col-md-4 order-md-2">
+        <%= image_tag("android2.png", class: "mx-auto d-block w-75") %>
+      </div>
+
+    </div>
+  </div>
+</main>
+<%= render "layouts/footer" %>
