@@ -39,6 +39,11 @@ gem 'octicons_helper'
 # Font-Awesome Sass gem for use in Ruby/Rails projects
 gem 'font-awesome-sass'
 
+# Flexible authentication solution for Rails
+gem 'devise'
+
+gem 'activeadmin'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
