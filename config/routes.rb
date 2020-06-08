@@ -12,6 +12,13 @@ Rails.application.routes.draw do
   get "/ios", to: "pages#ios"
   get "/privacy-policy", to: "pages#privacy_policy"
   get "/terms-of-service", to: "pages#terms_of_service"
-    
+
+  # Classrooms
+  resources :classrooms, only: [:index, :show], param: :id do
+    member do
+      get :records
+    end
+  end
+
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
