@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_08_085907) do
+ActiveRecord::Schema.define(version: 2020_06_08_151205) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -61,6 +61,34 @@ ActiveRecord::Schema.define(version: 2020_06_08_085907) do
     t.index ["slug"], name: "index_classrooms_on_slug"
     t.index ["slug_en"], name: "index_classrooms_on_slug_en"
     t.index ["slug_uk"], name: "index_classrooms_on_slug_uk"
+  end
+
+  create_table "disciplines", force: :cascade do |t|
+    t.string "name"
+    t.string "description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "disciplines_classrooms", id: false, force: :cascade do |t|
+    t.integer "discipline_id"
+    t.integer "classroom_id"
+    t.index ["classroom_id"], name: "index_disciplines_classrooms_on_classroom_id"
+    t.index ["discipline_id"], name: "index_disciplines_classrooms_on_discipline_id"
+  end
+
+  create_table "disciplines_groups", id: false, force: :cascade do |t|
+    t.integer "discipline_id"
+    t.integer "group_id"
+    t.index ["discipline_id"], name: "index_disciplines_groups_on_discipline_id"
+    t.index ["group_id"], name: "index_disciplines_groups_on_group_id"
+  end
+
+  create_table "disciplines_teachers", id: false, force: :cascade do |t|
+    t.integer "discipline_id"
+    t.integer "teacher_id"
+    t.index ["discipline_id"], name: "index_disciplines_teachers_on_discipline_id"
+    t.index ["teacher_id"], name: "index_disciplines_teachers_on_teacher_id"
   end
 
   create_table "friendly_id_slugs", force: :cascade do |t|
