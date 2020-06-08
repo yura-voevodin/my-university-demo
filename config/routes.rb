@@ -20,5 +20,19 @@ Rails.application.routes.draw do
     end
   end
 
+  # Groups
+  resources :groups, only: [:index, :show], param: :id do
+    member do
+      get :records
+    end
+  end
+
+  # Teachers
+  resources :teachers, only: [:index, :show], param: :id do
+    member do
+      get :records
+    end
+  end
+
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

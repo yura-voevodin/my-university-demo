@@ -1,0 +1,47 @@
+<% meta_tag :description, "Розклад занять, Викладачі" %>
+<% meta_tag :keywords, "Викладачі,Розклад" %>
+<% @title = "Мій Університет - Викладачі" %>
+<%= content_for(:canonical_link, teachers_url) %>
+<% no_index %>
+
+<%= render "layouts/navbar" %>
+
+<p id="notice"><%= notice %></p>
+
+<main class="container" role="main">
+  <div class="mx-auto col-md-8">
+    <h1 class="mb-4"><%= octicon "briefcase", height: 32, width: 32 %> Викладачі</h1>
+
+    <div class="row">
+      <div class="col mb-4 mr-0 ml-0">
+        <form method="get" id="previous_date" class="form-inline mt-2 mt-md-0">
+          <input class="form-control mr-sm-2" type="text" placeholder="Викладач" aria-label="Пошук" name="query" value="<%= @query %>">
+          <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Шукати</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col mb-4 mr-0 ml-0">
+
+        <% if @teachers.empty? %>
+        <p>Нічого не знайдено</p>
+        <% else %>
+        <div class="card">
+          <ul class="list-group list-group-flush">
+            <% @teachers.each do |teacher| %>
+            <li class="list-group-item"><%= link_to teacher.name, teacher_url(teacher.friendly_id) %></li>
+            <% end %>
+          </ul>
+        </div>
+        <% end %>
+
+        <div class="mt-4"><%= will_paginate @teachers, :page_links => false, renderer: WillPaginate::ActionView::BootstrapLinkRenderer, list_classes: %w(pagination justify-content-center) %></div>
+        <div class="container">
+          <div class="row"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+<%= render "layouts/footer" %>
