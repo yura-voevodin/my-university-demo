@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_08_083813) do
+ActiveRecord::Schema.define(version: 2020_06_08_085907) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -79,6 +79,12 @@ ActiveRecord::Schema.define(version: 2020_06_08_083813) do
     t.string "lowercase_name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "slug"
+    t.string "slug_en"
+    t.string "slug_uk"
+    t.index ["slug"], name: "index_groups_on_slug"
+    t.index ["slug_en"], name: "index_groups_on_slug_en"
+    t.index ["slug_uk"], name: "index_groups_on_slug_uk"
   end
 
   create_table "teachers", force: :cascade do |t|
@@ -86,6 +92,12 @@ ActiveRecord::Schema.define(version: 2020_06_08_083813) do
     t.string "lowercase_name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "slug"
+    t.string "slug_en"
+    t.string "slug_uk"
+    t.index ["slug"], name: "index_teachers_on_slug"
+    t.index ["slug_en"], name: "index_teachers_on_slug_en"
+    t.index ["slug_uk"], name: "index_teachers_on_slug_uk"
   end
 
 end
