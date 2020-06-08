@@ -28,9 +28,13 @@ gem 'jbuilder', '~> 2.7'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 
-# Bootstrap
+# ---- Bootstrap ----
+
 gem 'bootstrap', '~> 4.2.1'
 gem 'jquery-rails'
+# ----
+
+# ---- Icons ----
 
 # A scalable set of icons handcrafted with <3 by GitHub
 gem 'octicons'
@@ -38,11 +42,27 @@ gem 'octicons_helper'
 
 # Font-Awesome Sass gem for use in Ruby/Rails projects
 gem 'font-awesome-sass'
+# ----
+
+# ---- ActiveAdmin ----
 
 # Flexible authentication solution for Rails
 gem 'devise'
 
 gem 'activeadmin'
+# ----
+
+# ---- Friendly ID ----
+
+# Collecting Locale data for Ruby on Rails
+gem 'rails-i18n'
+
+#  Creates pretty URL’s
+gem 'friendly_id', '~> 5.2.4'
+# ----
+
+# gem 'will_paginate', '~> 3.1.0'
+# gem 'will_paginate-bootstrap4'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
