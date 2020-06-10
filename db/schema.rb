@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_10_114003) do
+ActiveRecord::Schema.define(version: 2020_06_10_115645) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -123,7 +123,7 @@ ActiveRecord::Schema.define(version: 2020_06_10_114003) do
   end
 
   create_table "records", force: :cascade do |t|
-    t.datetime "start_date"
+    t.date "start_date"
     t.integer "classroom_id"
     t.integer "discipline_id"
     t.integer "teacher_id"
