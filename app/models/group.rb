@@ -12,6 +12,10 @@ class Group < ApplicationRecord
     ]
   end
 
+  def should_generate_new_friendly_id?
+    name_changed?
+  end
+
   # Field validations
   validates :name, presence: true
 
@@ -20,4 +24,8 @@ class Group < ApplicationRecord
   def add_lowercase_name
     self.lowercase_name = name.downcase
   end
+
+  # Associations
+  has_and_belongs_to_many :records, optional: true, dependent: :nullify
+  has_and_belongs_to_many :disciplines, optional: true
 end
