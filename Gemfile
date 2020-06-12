@@ -36,10 +36,6 @@ gem 'jquery-rails'
 
 # ---- Icons ----
 
-# A scalable set of icons handcrafted with <3 by GitHub
-gem 'octicons'
-gem 'octicons_helper'
-
 # Font-Awesome Sass gem for use in Ruby/Rails projects
 gem 'font-awesome-sass'
 # ----

@@ -159,11 +159,6 @@ GEM
     nio4r (2.5.2)
     nokogiri (1.10.9)
       mini_portile2 (~> 2.4.0)
-    octicons (9.6.0)
-      nokogiri (>= 1.6.3.1)
-    octicons_helper (9.6.0)
-      octicons (= 9.6.0)
-      rails
     orm_adapter (0.5.0)
     polyamorous (2.3.2)
       activerecord (>= 5.2.1)
@@ -292,8 +287,6 @@ DEPENDENCIES
   jbuilder (~> 2.7)
   jquery-rails
   listen (~> 3.2)
-  octicons
-  octicons_helper
   puma (~> 4.1)
   rails (~> 6.0.3, >= 6.0.3.1)
   rails-i18n
