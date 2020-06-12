@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_10_115645) do
+ActiveRecord::Schema.define(version: 2020_06_10_141904) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -122,6 +122,13 @@ ActiveRecord::Schema.define(version: 2020_06_10_115645) do
     t.index ["record_id"], name: "index_groups_records_on_record_id"
   end
 
+  create_table "pairs", force: :cascade do |t|
+    t.time "start_time", null: false
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "records", force: :cascade do |t|
     t.date "start_date"
     t.integer "classroom_id"
@@ -129,8 +136,10 @@ ActiveRecord::Schema.define(version: 2020_06_10_115645) do
     t.integer "teacher_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "pair_id"
     t.index ["classroom_id"], name: "index_records_on_classroom_id"
     t.index ["discipline_id"], name: "index_records_on_discipline_id"
+    t.index ["pair_id"], name: "index_records_on_pair_id"
     t.index ["teacher_id"], name: "index_records_on_teacher_id"
   end
 
@@ -147,4 +156,5 @@ ActiveRecord::Schema.define(version: 2020_06_10_115645) do
     t.index ["slug_uk"], name: "index_teachers_on_slug_uk"
   end
 
+  add_foreign_key "records", "pairs"
 end
