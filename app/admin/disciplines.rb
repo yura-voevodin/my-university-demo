@@ -9,12 +9,8 @@ ActiveAdmin.register Discipline do
   index do
     selectable_column
     column :name
-
-    # Columns for admin
-    if current_admin_user.is_admin?
-      column :created_at
-      column :updated_at
-    end
+    column :created_at
+    column :updated_at
 
     actions
   end
