@@ -5,12 +5,15 @@ ActiveAdmin.register Pair do
   #
   permit_params :start_time, :name
 
-  # Index
+  # Filterable attributes on the index screen
+  filter :name
+
+  # -- Index --
   index do
+    selectable_column
     column :start_time do |r|
       r.start_time.strftime('%H:%M')
     end
-    column :start_time
     column :name
     actions
   end
