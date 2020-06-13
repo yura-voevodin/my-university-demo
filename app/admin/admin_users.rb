@@ -5,6 +5,7 @@ ActiveAdmin.register AdminUser do
     selectable_column
     id_column
     column :email
+    column :role
     column :current_sign_in_at
     column :sign_in_count
     column :created_at
@@ -21,6 +22,7 @@ ActiveAdmin.register AdminUser do
       f.input :email
       f.input :password
       f.input :password_confirmation
+      f.input :role, as: :select, collection: AdminUser::ADMIN_ROLES, include_blank: false
     end
     f.actions
   end
