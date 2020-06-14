@@ -14,8 +14,20 @@ class ClassroomsController < ApplicationController
     end
   end
 
+  # GET /auditoriums/1
+  def show
+    # Date
+    @date = pair_date_from(params)
+    next_date = @date + 1.day
+    previous_date = @date - 1.day
+
+    @records = Record.where(classroom: @model)
+    .where(start_date: @date.all_day)
+    .order(:start_date)
+  end
+
   private
   def find_model
-    @model = Classroom.find(params[:id]) if params[:id]
+    @model = Classroom.friendly.find(params[:id]) if params[:id]
   end
 end

@@ -14,6 +14,12 @@
   <meta name="msapplication-TileColor" content="#da532c">
   <meta name="theme-color" content="#ffffff">
 
+  <script type="text/javascript">
+    $(function () {
+      $('[data-toggle="tooltip"]').tooltip()
+    })
+  </script>
+
   <title><%= @title %></title>
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>

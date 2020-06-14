@@ -1,0 +1,18 @@
+<% meta_tag :keywords, "Розклад, Аудиторія, #{@model.name}" %>
+<% meta_tag :description, "Розклад занять, Аудиторія " + @model.name %>
+<% @title = "#{@model.name}" %>
+<%= content_for(:canonical_link, classroom_url(@model)) %>
+
+<%= render "layouts/navbar" %>
+<p id="notice"><%= notice %></p>
+
+<main class="container" role="main">
+  <div class="mb-3">
+    <h1><%= @model.name %></h1>
+  </div>
+  <%= render "layouts/datepicker", pair_date: @pair_date %>
+  <div id="records">
+    <%= render "records/show" %>
+  </div>
+</main>
+<%= render "layouts/footer" %>

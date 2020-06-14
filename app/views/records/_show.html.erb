@@ -1,0 +1,58 @@
+<div class="mx-auto col-md-8">
+
+  <% for record in @records %>
+  <div class="row">
+    <div class="col mb-4 mr-0 ml-0">
+      <div class="card">
+        <div class="card-header">
+          <span data-toggle="tooltip" title="<%= l record.start_date, format: "%A, %e %B %Y" %>"><%= record.pair.name %> (<%= l record.pair.start_time, format: "%H:%M" %>)</span>
+        </div>
+
+        <% if record.discipline.name.present? %>
+        <div class="card-body">
+          <% if record.discipline.name.present? %>
+          <h5 class="card-title"><span data-toggle="tooltip" title="Назва пари"><%= record.discipline.name %></span></h5>
+          <% end %>
+        </div>
+        <% end %>
+
+        <ul class="list-group list-group-flush">
+          <% if record.classroom %>
+          <li class="list-group-item">
+          <span class="align-text-bottom" data-toggle="tooltip" title="Аудиторія"><i class="fas fa-door-open mr-2"></i></span>
+            <%= link_to classroom_url(record.classroom.friendly_id, pair_date: @date), rel: 'nofollow' do %>
+            <span class="ml-2"><%= record.classroom.name %></span>
+            <% end %>
+          </li>
+          <% end %>
+
+          <% if record.teacher %>
+          <li class="list-group-item">
+            <span class="align-text-bottom" data-toggle="tooltip" title="Викладач"><i class="fas fa-chalkboard-teacher mr-2"></i></span>
+            <%= link_to teacher_url(record.teacher.friendly_id, pair_date: @date), rel: 'nofollow' do %>
+            <span class="ml-2"><%= record.teacher.name %></span>
+            <% end %>
+          </li>
+          <% end %>
+
+          <% if record.groups && record.groups.count > 0 %>
+
+          <li class="list-group-item">
+            <span class="align-text-bottom mr-2" data-toggle="tooltip" title="Група"><%= octicon "organization" %></span>
+            <% for i in 1..record.groups.count do %>
+            <%= link_to university_group_url(university.url, record.groups[i-1].friendly_id, pair_date: @date), rel: 'nofollow' do %>
+            <%= record.groups[i-1].name %>
+            <% end %>
+            <% if i != record.groups.count %>
+            <%= ',' %>
+            <% end %>
+            <% end %>
+          </li>
+
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>
