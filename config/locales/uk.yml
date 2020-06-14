@@ -1,0 +1,382 @@
+---
+uk:
+  formtastic:
+    :yes: 'Так'
+    :no: 'Ні'
+    :create: 'Створити'
+    :update: 'Оновити'
+    :submit: 'Надіслати'
+    :cancel: 'Відмінити'
+
+  # ActiveAdmin
+  active_admin:
+    resources:
+      pair:
+        new_model: 'Додати'
+        edit_model: 'Редагувати'
+        delete_model: 'Видалити'
+      classroom:
+        new_model: 'Нова Аудиторія'
+        edit_model: 'Редагувати Аудиторію'
+        delete_model: 'Видалити Аудиторію'
+      discipline:
+        new_model: 'Нова Дисципліна'
+        edit_model: 'Редагувати Дисципліну'
+        delete_model: 'Видалити Дисципліну'
+      group:
+        new_model: 'Нова Група'
+        edit_model: 'Редагувати Групу'
+        delete_model: 'Видалити Групу'
+      teacher:
+        new_model: 'Новий Викладач'
+        edit_model: 'Редагувати Викладача'
+        delete_model: 'Видалити Викладача'
+      record:
+        new_model: 'Нова Пара'
+        edit_model: 'Редагувати Пару'
+        delete_model: 'Видалити Пару'
+    visit_on_site: 'Переглянути на сайті'
+
+  will_paginate:
+      previous_label: "&#8592; Попередня"
+      next_label: "Наступна &#8594;"
+      page_gap: "&hellip;"
+  university: 'Університет'
+
+  activerecord:
+    errors:
+      messages:
+        record_invalid: 'Виникли помилки: %{errors}'
+        restrict_dependent_destroy:
+          has_one: 'Неможливо видалити запис, так як існує залежність: %{record}'
+          has_many: 'Неможливо видалити запис, так як існують залежності: %{record}'
+    models:
+      admin_user:
+        one: 'Адміністратор'
+        many: 'Адміністратори'
+        few: 'Адміністратори'
+        other: 'Адміністратори'
+      pair:
+        one: 'Розклад'
+        many: 'Розклад'
+        few: 'Розклад'
+        other: 'Розклад'
+      record:
+        one: 'Пара'
+        many: 'Пари'
+        few: 'Пари'
+        other: 'Пари'
+      classroom:
+        one: 'Аудиторія'
+        many: 'Аудиторії'
+        few: 'Аудиторії'
+        other: 'Аудиторії'
+      discipline:
+        one: 'Дисципліна'
+        many: 'Дисципліни'
+        few: 'Дисципліни'
+        other: 'Дисципліни'
+      group:
+        one: 'Група'
+        many: 'Групи'
+        few: 'Групи'
+        other: 'Групи'
+      teacher:
+        one: 'Викладач'
+        many: 'Викладачі'
+        few: 'Викладачі'
+        other: 'Викладачі'
+    attributes:
+      pair:
+        name: 'Назва'
+        start_time: 'Початок'
+        updated_at: 'Дата оновлення'
+        created_at: 'Дата створення'
+      admin_user:
+        created_at: 'Дата реєстрації'
+        role: 'Роль'
+      record:
+        name: 'Назва'
+        start_date: 'Дата'
+        teacher: 'Викладач'
+        classroom: 'Аудиторія'
+        groups: 'Групи'
+        discipline: 'Дисципліна'
+        pair: 'Пара'
+        updated_at: 'Дата оновлення'
+        created_at: 'Дата створення'
+      classroom:
+        name: 'Назва'
+        updated_at: 'Дата оновлення'
+        created_at: 'Дата створення'
+      group:
+        name: 'Назва'
+        updated_at: 'Дата оновлення'
+        created_at: 'Дата створення'
+      teacher:
+        name: 'ФІО'
+        updated_at: 'Дата оновлення'
+        created_at: 'Дата створення'
+      discipline:
+        name: 'Назва'
+        description: 'Опис'
+        updated_at: 'Дата оновлення'
+        created_at: 'Дата створення'
+
+  date:
+    abbr_day_names:
+    - нд.
+    - пн.
+    - вт.
+    - ср.
+    - чт.
+    - пт.
+    - сб.
+    abbr_month_names:
+    -
+    - січ.
+    - лют.
+    - бер.
+    - квіт.
+    - трав.
+    - черв.
+    - лип.
+    - серп.
+    - вер.
+    - жовт.
+    - лист.
+    - груд.
+    day_names:
+    - Неділя
+    - Понеділок
+    - Вівторок
+    - Середа
+    - Четвер
+    - П'ятниця
+    - Субота
+    formats:
+      default: "%d.%m.%Y"
+      long: "%d %B %Y"
+      short: "%d %b"
+    month_names:
+    -
+    - січня
+    - лютого
+    - березня
+    - квітня
+    - травня
+    - червня
+    - липня
+    - серпня
+    - вересня
+    - жовтня
+    - листопада
+    - грудня
+    order:
+    - :day
+    - :month
+    - :year
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        few: близько %{count} години
+        many: близько %{count} годин
+        one: близько %{count} година
+        other: близько %{count} години
+      about_x_months:
+        few: близько %{count} місяців
+        many: близько %{count} місяців
+        one: близько %{count} місяця
+        other: близько %{count} місяця
+      about_x_years:
+        few: близько %{count} років
+        many: близько %{count} років
+        one: близько %{count} року
+        other: близько %{count} року
+      almost_x_years:
+        few: майже %{count} років
+        many: майже %{count} років
+        one: майже %{count} роки
+        other: майже %{count} років
+      half_a_minute: півхвилини
+      less_than_x_minutes:
+        few: менше %{count} хвилин
+        many: менше %{count} хвилин
+        one: менше %{count} хвилини
+        other: менше %{count} хвилини
+      less_than_x_seconds:
+        few: менше %{count} секунд
+        many: менше %{count} секунд
+        one: менше %{count} секунди
+        other: менше %{count} секунди
+      over_x_years:
+        few: більше %{count} років
+        many: більше %{count} років
+        one: більше %{count} року
+        other: більше %{count} року
+      x_days:
+        few: "%{count} дні"
+        many: "%{count} днів"
+        one: "%{count} день"
+        other: "%{count} дня"
+      x_minutes:
+        few: "%{count} хвилини"
+        many: "%{count} хвилин"
+        one: "%{count} хвилина"
+        other: "%{count} хвилини"
+      x_months:
+        few: "%{count} місяці"
+        many: "%{count} місяців"
+        one: "%{count} місяць"
+        other: "%{count} місяця"
+      x_years:
+        few: "%{count} роки"
+        many: "%{count} років"
+        one: "%{count} рік"
+        other: "%{count} року"
+      x_seconds:
+        few: "%{count} секунди"
+        many: "%{count} секунд"
+        one: "%{count} секунда"
+        other: "%{count} секунди"
+    prompts:
+      day: День
+      hour: Година
+      minute: Хвилина
+      month: Місяць
+      second: Секунда
+      year: Рік
+  errors:
+    format: "%{attribute} %{message}"
+    messages:
+      accepted: має бути прийнятий
+      blank: не може бути пустим
+      present: має бути пустим
+      confirmation: не збігається з підтвердженням
+      empty: не може бути порожнім
+      equal_to: має дорівнювати %{count}
+      even: має бути парним
+      exclusion: зарезервовано
+      greater_than: має бути більше ніж %{count}
+      greater_than_or_equal_to: має бути більше ніж або дорівнювати %{count}
+      inclusion: не включено до переліку
+      invalid: недійсний
+      less_than: має бути менше ніж %{count}
+      less_than_or_equal_to: має бути менше ніж або дорівнювати %{count}
+      model_invalid: 'Виникли помилки: %{errors}'
+      not_a_number: не число
+      not_an_integer: не є цілим числом
+      odd: має бути непарним
+      required: не може бути порожнім
+      taken: вже зайнятий
+      too_long:
+        few: занадто довгий (максимум %{count} знаки)
+        many: занадто довгий (максимум %{count} знаків)
+        one: занадто довгий (максимум %{count} знак)
+        other: занадто довгий (максимум %{count} знаку)
+      too_short:
+        few: занадто короткий (мінімум %{count} знаки)
+        many: занадто короткий (мінімум %{count} знаків)
+        one: занадто короткий (мінімум %{count} знак)
+        other: занадто короткий (мінімум %{count} знаку)
+      wrong_length:
+        few: неправильна довжина (має бути %{count} знаки)
+        many: неправильна довжина (має бути %{count} знаків)
+        one: неправильна довжина (має бути %{count} знак)
+        other: неправильна довжина (має бути %{count} знаку)
+      other_than: має відрізнятись від %{count}
+    template:
+      body: 'Помилки виявлено в таких полях:'
+      header:
+        few: "%{model} не збережено через %{count} помилки"
+        many: "%{model} не збережено через %{count} помилок"
+        one: "%{model} не збережено через %{count} помилку"
+        other: "%{model} не збережено через %{count} помилки"
+  helpers:
+    select:
+      prompt: 'Оберіть: '
+    submit:
+      create: Створити %{model}
+      submit: Зберегти %{model}
+      update: Зберегти %{model}
+  number:
+    currency:
+      format:
+        delimiter: " "
+        format: "%n %u"
+        precision: 2
+        separator: ","
+        significant: false
+        strip_insignificant_zeros: false
+        unit: грн.
+    format:
+      delimiter: " "
+      precision: 3
+      separator: ","
+      significant: false
+      strip_insignificant_zeros: false
+    human:
+      decimal_units:
+        format: "%n %u"
+        units:
+          billion:
+            few: Мільярдів
+            many: Мільярдів
+            one: Мільярд
+            other: Мільярдів
+          million:
+            few: Мільйонів
+            many: Мільйонів
+            one: Мільйон
+            other: Мільйонів
+          quadrillion:
+            few: Квадрильйонів
+            many: Квадрильйонів
+            one: Кквадрильйон
+            other: Квадрильйонів
+          thousand:
+            few: Тисяч
+            many: Тисяч
+            one: Тисяча
+            other: Тисяч
+          trillion:
+            few: Трильйонів
+            many: Трильйонів
+            one: Трильйон
+            other: Трильйонів
+          unit: ''
+      format:
+        delimiter: ''
+        precision: 1
+        significant: false
+        strip_insignificant_zeros: false
+      storage_units:
+        format: "%n %u"
+        units:
+          byte:
+            few: байти
+            many: байтів
+            one: байт
+            other: байту
+          gb: ГБ
+          kb: кБ
+          mb: МБ
+          tb: ТБ
+    percentage:
+      format:
+        delimiter: ''
+    precision:
+      format:
+        delimiter: ''
+  support:
+    array:
+      last_word_connector: " та "
+      two_words_connector: " і "
+      words_connector: ", "
+  time:
+    am: до полудня
+    formats:
+      default: "%a, %d %b %Y, %H:%M:%S %z"
+      long: "%d %B %Y, %H:%M"
+      short: "%d %b, %H:%M"
+    pm: по полудні

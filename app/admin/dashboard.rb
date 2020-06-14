@@ -3,7 +3,7 @@ ActiveAdmin.register_page "Dashboard" do
   
   content title: proc { I18n.t("active_admin.dashboard") } do
 
-    panel "Recent Records" do
+    panel "Недавні записи" do
       table_for Record.order('start_date desc').limit(10) do
         column :start_date
         column :pair

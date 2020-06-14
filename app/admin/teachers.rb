@@ -32,6 +32,10 @@ ActiveAdmin.register Teacher do
     f.actions
   end
 
+  action_item :view, only: :show, priority: 0 do
+    link_to t("active_admin.visit_on_site"), teacher_url(teacher.friendly_id)
+  end
+
   # -- Show -- 
   show do
     attributes_table do

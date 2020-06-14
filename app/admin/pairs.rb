@@ -17,5 +17,27 @@ ActiveAdmin.register Pair do
     column :name
     actions
   end
+
+  # -- Show -- 
+  show do
+    attributes_table do
+      row :name
+      row "Початок", :start_time do |r|
+        r.start_time.strftime('%H:%M')
+      end
+
+      row :created_at
+      row :updated_at
+    end
+  end
+
+  # -- Form --
+  form do |f|
+    f.inputs do
+      f.input :start_time, :as => :time_picker
+      f.input :name
+    end
+    f.actions
+  end
   
 end

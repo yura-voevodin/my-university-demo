@@ -12,7 +12,7 @@ ActiveAdmin.register Classroom do
 
     # Columns for admin
     if current_admin_user.is_admin?
-      column :slug_uk    
+      column :slug_uk
     end
 
     column :created_at
@@ -27,6 +27,10 @@ ActiveAdmin.register Classroom do
       f.input :name
     end
     f.actions
+  end
+
+  action_item :view, only: :show, priority: 0 do
+    link_to t("active_admin.visit_on_site"), classroom_url(classroom.friendly_id)
   end
 
   # -- Show -- 
