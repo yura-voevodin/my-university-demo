@@ -13,11 +13,8 @@
  *= require_self
  */
 
-@import "font-awesome-sprockets";
-@import "font-awesome";
-
 /*Custom bootstrap variables must be set or imported *before* bootstrap.*/
-@import "bootstrap";
+@import "bootstrap/scss/bootstrap";
 
 html {
   color-scheme: light dark;

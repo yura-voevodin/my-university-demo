@@ -8,18 +8,18 @@
       <div class="btn-group mr-3 mb-2" role="group">
         <form action="" method="get" id="previous_date">
           <input type="date" id="start" name="pair_date"
-          value="<%= @previousDate %>" hidden>
-          <a onclick="$('#previous_date').submit();" class="btn btn-primary" style="color: white;"><i class="fas fa-chevron-left"></i></a>
+          value="<%= @previous_date %>" hidden>
+          <button type="submit" form="previous_date" class="btn btn-primary" style="color: white;"><i class="fas fa-chevron-left"></i></button>
         </form>
       </div>
       <div class="btn-group mr-3 mb-2" role="group">
-        <button class="btn btn-primary far fa-calendar-alt" type="button" data-toggle="collapse" data-target="#collapseCalendar" aria-expanded="false" aria-controls="collapseCalendar"></button>
+        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseCalendar" aria-expanded="false" aria-controls="collapseCalendar"><i class="far fa-calendar-alt"></i></button>
       </div>
       <div class="btn-group mr-3 mb-2" role="group">
         <form action="" method="get" id="next_date">
           <input type="date" id="start" name="pair_date"
-          value="<%= @nextDate %>" hidden>
-          <a onclick="$('#next_date').submit();" class="btn btn-primary" style="color: white;"><i class="fas fa-chevron-right"></i></a>
+          value="<%= @next_date %>" hidden>
+          <button type="submit" form="next_date" class="btn btn-primary" style="color: white;"><i class="fas fa-chevron-right"></i></button>
         </form>
       </div>
     </div>

@@ -35,7 +35,7 @@
         </div>
         <% end %>
 
-        <div class="mt-4"><%= will_paginate @groups, :page_links => false, renderer: WillPaginate::ActionView::BootstrapLinkRenderer, list_classes: %w(pagination justify-content-center) %></div>
+        <div class="mt-4"><%= will_paginate @groups, :page_links => false, list_classes: %w(pagination justify-content-center) %></div>
         <div class="container">
           <div class="row"></div>
         </div>
