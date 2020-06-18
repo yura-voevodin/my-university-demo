@@ -13,8 +13,21 @@ class GroupsController < ApplicationController
     end
   end
 
+  # GET /groups/1
+  def show
+    # Date
+    @date = pair_date_from(params)
+    @next_date = @date + 1.day
+    @previous_date = @date - 1.day
+
+    @records = Record.joins(:groups)
+    .where('groups.id': @model.id)
+    .where(start_date: @date.all_day)
+    .order(:start_date)
+  end
+
   private
   def find_model
-    @model = Group.find(params[:id]) if params[:id]
+    @model = Group.friendly.find(params[:id]) if params[:id]
   end
 end

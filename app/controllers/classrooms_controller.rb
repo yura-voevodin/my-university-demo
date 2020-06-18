@@ -14,7 +14,7 @@ class ClassroomsController < ApplicationController
     end
   end
 
-  # GET /auditoriums/1
+  # GET /classrooms/1
   def show
     # Date
     @date = pair_date_from(params)
