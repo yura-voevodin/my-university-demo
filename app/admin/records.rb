@@ -3,7 +3,7 @@ ActiveAdmin.register Record do
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 
-  permit_params :start_date, :classroom_id, :discipline_id, :teacher_id, :pair_id
+  permit_params :start_date, :classroom_id, :discipline_id, :teacher_id, :pair_id, group_ids: []
 
   # Filterable attributes on the index screen
   filter :start_date
@@ -47,8 +47,25 @@ ActiveAdmin.register Record do
       # Teacher
       f.input :teacher, as: :select
 
+      # Groups
+      f.input :groups, as: :select
+
     end
     f.actions
+  end
+
+  # -- Show -- 
+  show do
+    attributes_table do
+      row :pair
+      row :start_date
+      row :classroom
+      row :discipline
+      row :teacher
+      row :groups
+      row :created_at
+      row :updated_at
+    end
   end
   
 end
