@@ -1,5 +1,26 @@
 <div class="mx-auto col-md-8">
 
+  <% if @records.empty? %>
+  <p>
+    <div class="px-3 py-3 mx-auto text-center">
+      <h2 class="h1-responsive font-weight-bold text-center my-5">Пар немає</h2>
+      <p>Підписуйтеся на <b>Мій Університет</b> в <a target="_blank" href="https://www.instagram.com/university.my/">Instagram</a> та <a target="_blank" href="https://t.me/university_my">Telegram</a></p>
+      <p>Або читайте нас на <a target="_blank" href="https://www.facebook.com/myuniversityservice">Facebook</a> та <a target="_blank" href="https://twitter.com/my_university1">Twitter</a></p>
+      <%
+      images = [
+        "4 Multitasking.png",
+        "6 Working at desk.png",
+        "1 Working remotely.png",
+        "7 Social Media.png",
+        "8 Work and life balance.png",
+        "13 Walking the dog.png"
+      ]
+      @randomImage = images.sample
+      %>
+      <%= image_tag(@randomImage, class: "img-fluid") %>
+    </div>
+  </p>
+  <% else %>
   <% for record in @records %>
   <div class="row">
     <div class="col mb-4 mr-0 ml-0">
@@ -49,10 +70,13 @@
             <% end %>
           </li>
           <% end %>
-
         </ul>
       </div>
     </div>
   </div>
   <% end %>
+
+  <% end %>
+
+  
 </div>
