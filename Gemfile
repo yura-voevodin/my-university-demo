@@ -32,7 +32,6 @@ gem 'bootsnap', '>= 1.4.2', require: false
 
 # Flexible authentication solution for Rails
 gem 'devise'
-
 gem 'activeadmin'
 # ----
 
