@@ -3,7 +3,12 @@ ActiveAdmin.register Record do
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 
-  permit_params :start_date, :classroom_id, :discipline_id, :teacher_id, :pair_id
+  permit_params :start_date,
+                :classroom_id,
+                :discipline_id,
+                :teacher_id,
+                :pair_id,
+                group_ids: []
 
   # Filterable attributes on the index screen
   filter :start_date
@@ -21,8 +26,11 @@ ActiveAdmin.register Record do
     column :discipline
     column :teacher
     column :classroom
-
-    actions
+    column :groups
+    
+    actions defaults: true do |record|
+      link_to 'Duplicate', clone_admin_record_path(record)
+    end
   end
 
   # -- Form --
@@ -46,9 +54,32 @@ ActiveAdmin.register Record do
 
       # Teacher
       f.input :teacher, as: :select
+      
+      # Groups
+      f.input :groups, as: :select
 
     end
     f.actions
+  end
+  
+  # Show Page
+  show do
+    attributes_table do
+      row :start_date
+      row :pair
+      row :classroom
+      row :discipline
+      row :teacher
+      row :groups
+      row :created_at
+      row :updated_at
+    end
+  end
+  
+  member_action :clone, method: :get do
+    @record = resource.dup
+    @page_title = "#{resource.start_date} - #{resource.discipline.name}" # Sets the page title
+    render :new, layout: false
   end
   
 end

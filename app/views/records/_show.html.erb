@@ -38,9 +38,9 @@
           <% if record.groups && record.groups.count > 0 %>
 
           <li class="list-group-item">
-            <span class="align-text-bottom mr-2" data-toggle="tooltip" title="Група"><%= octicon "organization" %></span>
+            <span class="align-text-bottom mr-2" data-toggle="tooltip" title="Група"><i class="fas fa-users mr-2"></i></span>
             <% for i in 1..record.groups.count do %>
-            <%= link_to university_group_url(university.url, record.groups[i-1].friendly_id, pair_date: @date), rel: 'nofollow' do %>
+            <%= link_to group_url(record.groups[i-1].friendly_id, pair_date: @date), rel: 'nofollow' do %>
             <%= record.groups[i-1].name %>
             <% end %>
             <% if i != record.groups.count %>

@@ -55,3 +55,11 @@ groups = JSON.parse(groups_json)
 groups['groups'].each do |group_json|
   Group.find_or_create_by(name: group_json)
 end
+
+# Disciplines
+disciplines_json = File.read("db/disciplines.json")
+disciplines = JSON.parse(disciplines_json)
+
+disciplines['disciplines'].each do |discipline_json|
+  Discipline.find_or_create_by(name: discipline_json)
+end
