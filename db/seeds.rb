@@ -34,9 +34,16 @@ end
 
 # Classrooms
 classrooms_json = File.read("db/classrooms.json")
-
 classrooms = JSON.parse(classrooms_json)
 
 classrooms['classrooms'].each do |classroom_json|
   Classroom.find_or_create_by(name: classroom_json)
+end
+
+# Teachers
+teachers_json = File.read("db/teachers.json")
+teachers = JSON.parse(teachers_json)
+
+teachers['teachers'].each do |teacher_json|
+  Teacher.find_or_create_by(name: teacher_json)
 end
