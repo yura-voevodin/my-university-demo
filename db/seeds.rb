@@ -47,3 +47,11 @@ teachers = JSON.parse(teachers_json)
 teachers['teachers'].each do |teacher_json|
   Teacher.find_or_create_by(name: teacher_json)
 end
+
+# Groups
+groups_json = File.read("db/groups.json")
+groups = JSON.parse(groups_json)
+
+groups['groups'].each do |group_json|
+  Group.find_or_create_by(name: group_json)
+end
