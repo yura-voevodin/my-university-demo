@@ -26,10 +26,9 @@ ActiveAdmin.register Record do
     column :discipline
     column :teacher
     column :classroom
-    column :groups
     
     actions defaults: true do |record|
-      link_to 'Duplicate', clone_admin_record_path(record)
+      link_to I18n.t("active_admin.duplicate"), clone_admin_record_path(record)
     end
   end
 
