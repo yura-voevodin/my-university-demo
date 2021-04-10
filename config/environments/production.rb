@@ -119,4 +119,6 @@ Rails.application.configure do
   # config.active_record.database_resolver_context = ActiveRecord::Middleware::DatabaseSelector::Resolver::Session
 
   config.assets.precompile += ['active_admin.css']
+  
+  config.hosts << "demo.my-university.com.ua"
 end
