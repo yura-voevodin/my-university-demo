@@ -121,4 +121,5 @@ Rails.application.configure do
   config.assets.precompile += ['active_admin.css']
   
   config.hosts << "demo.my-university.com.ua"
+  config.hosts << "www.demo.my-university.com.ua"
 end

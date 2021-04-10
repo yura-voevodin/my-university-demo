@@ -75,4 +75,5 @@ Rails.application.configure do
   # config.action_cable.disable_request_forgery_protection = true
   
   config.hosts << "demo.my-university.com.ua"
+  config.hosts << "www.demo.my-university.com.ua"
 end
